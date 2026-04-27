@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Login | Daily Routine{% endblock %}
+{% block content %}
+  <h1>Login</h1>
+  <p>Demo credentials: <code>admin / admin123</code></p>
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+  <form method="post" action="/login" class="card form-grid">
+    <label>Username<input type="text" name="username" required /></label>
+    <label>Password<input type="password" name="password" required /></label>
+    <button type="submit" class="btn">Login</button>
+  </form>
+{% endblock %}
