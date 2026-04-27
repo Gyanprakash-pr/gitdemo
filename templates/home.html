@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Home | Daily Routine{% endblock %}
+{% block content %}
+  <h1>Your Daily Routines</h1>
+
+  <section class="card">
+    <h2>Add Routine</h2>
+    <form method="post" action="/routines/add" class="form-grid">
+      <label>Title<input name="title" required /></label>
+      <label>Description<input name="description" /></label>
+      <label>Progress %<input type="number" name="progress" min="0" max="100" value="0" /></label>
+      <button class="btn" type="submit">Add</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Routine List</h2>
+    {% if routines %}
+      <div class="routine-grid">
+        {% for routine in routines %}
+          <article class="card">
+            <h3>{{ routine.title }}</h3>
+            <p>{{ routine.description or 'No description' }}</p>
+            <p><strong>Progress:</strong> {{ routine.progress }}%</p>
+            <progress max="100" value="{{ routine.progress }}"></progress>
+
+            <form method="post" action="/routines/{{ routine.id }}/progress" class="inline-form">
+              <input type="number" name="progress" min="0" max="100" value="{{ routine.progress }}" />
+              <button class="btn-secondary" type="submit">Update Progress</button>
+            </form>
+
+            <form method="post" action="/routines/{{ routine.id }}/delete">
+              <button class="btn-danger" type="submit">Delete</button>
+            </form>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No routines yet. Add your first one above.</p>
+    {% endif %}
+  </section>
+{% endblock %}

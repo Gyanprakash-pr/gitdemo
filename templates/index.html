@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Index | Daily Routine{% endblock %}
+{% block content %}
+  <h1>Welcome to Daily Routine</h1>
+  <p>Plan your day, track progress, and stay productive.</p>
+  {% if user %}
+    <p><a class="btn" href="/home">Open Home Dashboard</a></p>
+  {% else %}
+    <p><a class="btn" href="/login">Login to Continue</a></p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,90 @@
+:root {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f7f9fc;
+  color: #111827;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f2937;
+  color: white;
+  padding: 0.8rem 1rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 980px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.routine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.btn,
+.btn-secondary,
+.btn-danger {
+  border: none;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn {
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: white;
+}
+
+.error {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.inline-form {
+  margin: 0.8rem 0;
+}
